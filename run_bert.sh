@@ -5,10 +5,10 @@ epn=20
 sc=2
 dfmm=0
 model_type=bert
-pm=bert-base-uncased
+pm=bert-large-uncased
 data_dir=/home/zehao.yu/workspace/py3/SDoH/data/relation_processed/sdoh_aio_th1
-nmd=/home/zehao.yu/workspace/py3/SDoH/model/relations_model
-pof=/home/zehao.yu/workspace/py3/SDoH/res/predictions.txt
+nmd=/home/zehao.yu/workspace/py3/SDoH/model/relations_model/bert
+pof=/home/zehao.yu/workspace/py3/SDoH/res/predictions_bert_large.txt
 log=/home/zehao.yu/workspace/py3/SDoH/logs/log_relation_bert.txt
 
 python3 /home/zehao.yu/workspace/py3/dr_ann/ClinicalTransformerRelationExtraction/src/relation_extraction.py \
@@ -65,7 +65,7 @@ python3 /home/zehao.yu/workspace/py3/dr_ann/ClinicalTransformerRelationExtractio
 		--max_num_checkpoints 0 \
 		--log_file $log 
 edr=/home/zehao.yu/workspace/py3/SDoH/data/data_annotation_entity_only
-pod=/home/zehao.yu/workspace/py3/SDoH/res/relation_predicted_results_bert
+pod=/home/zehao.yu/workspace/py3/SDoH/res/relation_predicted_results_bert_large
 python3 /home/zehao.yu/workspace/py3/dr_ann/ClinicalTransformerRelationExtraction/src/data_processing/post_processing.py \
                 --mode mul \
                 --predict_result_file $pof \
